@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React In Browser</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="example">
+    </div>
+    <script type="text/babel">
+    var names = ['alice','bob']
+    function Mylist(){
+        return (
+            <div>
+                <ul>
+                    {
+                        names.map((name,index)=>{
+                            return <li key={index}>Hello {name}</li>
+                        })
+                    }
+                </ul>
+            </div>
+        )
+    }
+    ReactDOM.render(
+            <Mylist/>,//what to put
+            document.getElementById('example')  //where to put
+        )
+    </script>
+</body>
+</html>

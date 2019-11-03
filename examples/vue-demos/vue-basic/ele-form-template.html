@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+      <div id="app">
+          <el-form label-width="120px" label-position="left" >
+            <el-form-item label="JIRA用户名:" prop="username" >
+                <el-input v-model="wikiInfo.username" style="width: max-content"></el-input>
+            </el-form-item>
+            <el-form-item label="JIRA密码:" prop="password">
+                <el-input v-model="wikiInfo.password" style="width: max-content"></el-input>
+            </el-form-item>
+            <el-form-item label="JIRA项目:" prop="projectname">
+                <el-select v-model="wikiInfo.projectname" placeholder="请选择项目">
+                    <el-option label="社区服务-搬家" value="BKBJ"></el-option>
+                    <el-option label="社区服务-房源聚合" value="BKKD"></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="上传EXCEl文件:" prop="filePath">
+                <el-upload
+                class="upload-demo"
+                :on-success="handleSuccess"
+                action="/upload">
+                <el-button size="small" type="primary" style="margin-bottom: 10px;">点击上传</el-button>
+              </el-upload>
+            </el-form-item> 
+            <el-row>
+                    <el-button size="small" style="margin-bottom: 10px;" type="primary" @click="download" >下载模板</el-button>
+                    <el-button size="small" style="margin-bottom: 10px;" type = "primary" @click="onSubmit(wikiInfo)">立即创建</el-button>
+            </el-row>
+            <el-tag>如果一直提交失败，请尝试先在http://jira2.lianjia.com/login.jsp登录  然后再试。</el-tag>
+        </el-form>        
+    </div>
+        
+<script src="../node_modules/vue/dist/vue.min.js"></script>
+<script src="../node_modules/element-ui/lib/index.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script>
+    var ve = new Vue({
+        el: "#app",
+        data:{
+                wikiInfo: {
+                    username: '',
+                    password: '',
+                    projectname: ''
+                },
+                filePath: ''
+        },
+        methods: {
+            download() {
+            window.open(window.location.origin + '/static/create_Jira_Task_template.xlsx')
+        },
+            onSubmit:function(subform) {
+                    var data = {
+                        username:subform.username,
+                        pwd:subform.password,
+                        projectname:subform.projectname,
+                        filePath: this.filePath
+                    };
+                    $.ajax({
+                        url:'addJiraTask',
+                        data:data,
+                        type:'post',
+                        dataType:'json',
+                        success:function(msg){
+                            if(msg.status=='success'){
+                                alert('添加成功');
+                                window.setTimeout(function() {
+                                    window.location.reload();
+                                }, 500)
+                            }else{
+                                alert('添加失败:'+msg.msg)
+                            }
+                        }
+
+                    })
+                },
+                handleSuccess(res, file, fileList) {
+                    this.filePath = res;
+                    console.log('resp', res, file, fileList);
+                    this.$notify.success({
+                    title: '成功',
+                    message: `文件上传成功`
+      });
+    }
+
+        }
+    }
+    );
+</script>
+</body>
+</html>

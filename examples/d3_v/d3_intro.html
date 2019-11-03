@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3 Chart Try</title>
+    <script src="node_modules/d3/dist/d3.min.js"></script>
+</head>
+<body>
+    
+<P>HELLO World</P>
+<P>HELLO World_123</P>
+<P>HELLO World_1234</P>
+<P>HELLO World_12345</P>
+<P>HELLO World_123456</P>
+<div>
+    <ul></ul>
+</div>
+<script>
+    d3.select("body").style("background-color", "white");
+    d3.selectAll("p").style("color",function(){
+        return "hsl(" + Math.random() * 360 + ",100%,50%)";
+    });
+
+//     d3.selectAll("p").style("color", function(d, i) {
+//         console.log(i);
+//   return i % 2 ? "#fff" : "#eee";
+// });
+
+// d3.selectAll("p")
+//   .data([4, 8, 15, 16, 23, 42])
+//     .style("font-size", function(d) { return d + "px"; });
+//enter and exit: enter: data to selected element
+//exit: data exit
+var li =d3.select("body")
+  .selectAll("ul")
+  .data([4, 8, 15, 16, 23, 42])
+  .enter().append("li")
+    .text(function(d) { return "I’m number " + d + "!"; });
+li.enter().append("p")
+.text(function(d){return "new data "+d});
+li.exit().remove();
+</script>
+
+</body>
+</html>

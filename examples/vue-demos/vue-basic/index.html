@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Basic</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <input type="text" v-model='msg'>
+        <ul class="pagination">
+            <li v-for="n in pageCount">
+                <a href="javascript:void(0)"
+                    v-bind:class="activeNum===n+1?'actice':''"
+                >
+                    {{n+1}}
+                </a>
+            </li>
+        </ul>
+        <h1 v-if="age>=25">Age: {{age}}</h1>
+        <h1 v-else>Name: {{name}}</h1>
+        <h1>------cutline -----------</h1>
+        <h1 v-show="name.indexOf('keep') >= 0">Name: {{ name }}</h1>
+        <h1 v-else>Sex: {{sex}}</h1>
+        <p>
+            <button v-on:click="greet">greet</button>
+            <button v-on:click="say('hi')">hi</button>
+        </p>
+        <!-- <fieldset>
+            <legend>Create New member</legend>
+            <div class="form-group">
+                <label>name</label>
+                <input type="text" v-model='newMember.name'>
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="text" v-model="newMember.age"/>
+            </div>
+            <div class="form-group">
+                <label></label>
+                <button @click="createMember">Create</button>
+            </div>
+        </fieldset> -->
+        <table border="1">
+                <thead>
+                  <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>action</th>
+                  </tr>  
+                </thead>
+                <tbody>
+                    <tr v-for=" (member,index) in members">
+                        <td>{{member.name}}</td>
+                        <td>{{member.age}}</td>
+                        <td :class="'text-center'">
+                            <button @click="deleteMember(index)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    var exampleData = {
+        msg: "Two Way binding",
+        activeNum:1,
+        pageCount:10,
+        age:28,
+        name: 'keepfool',
+        sex:'hello',
+        members: [
+            {name:'jack',age:20},
+            {name:'jack1',age:21},
+            {name:'jack2',age:22},
+        ],
+        newMember:{}
+    }
+    new Vue({
+        el: '#app',
+        data: exampleData,
+        methods: {
+            greet: function(){
+                alert(this.msg);
+            },
+            say: function(msg){
+                alert(msg);
+            },
+            createMember:function(){
+                this.members.push(
+                   this.newMember 
+                );
+                this.newMember={name:'',age:''};
+            },
+            deleteMember: function(index){
+                this.members.slice(index,1);
+            }
+        }
+    })
+</script>
+</html>

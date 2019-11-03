@@ -1,0 +1,273 @@
+* {
+	margin    : 0;
+	padding   : 0;
+	box-sizing: border-box
+}
+
+html {
+	font-size  : 12px;
+	font-family: Ubuntu, simHei, sans-serif;
+	font-weight: 400
+}
+
+body {
+	font-size: 1rem
+}
+
+table,
+td,
+th {
+	border-collapse: collapse;
+	border-spacing : 0
+}
+
+table {
+	width : 100%;
+	margin: 20px;
+}
+
+td,
+th {
+	border : 1px solid #bcbcbc;
+	padding: 5px 10px
+}
+
+th {
+	background : #42b983;
+	font-size  : 1.2rem;
+	font-weight: 400;
+	color      : #fff;
+	cursor     : pointer
+}
+
+tr:nth-of-type(odd) {
+	background: #fff
+}
+
+tr:nth-of-type(even) {
+	background: #eee
+}
+
+fieldset {
+	border : 1px solid #BCBCBC;
+	padding: 15px;
+}
+
+input {
+	outline: none
+}
+
+input[type=text] {
+	border : 1px solid #ccc;
+	padding: .5rem .3rem;
+}
+
+input[type=text]:focus {
+	border-color: #42b983;
+}
+
+button {
+	outline         : none;
+	padding         : 5px 8px;
+	color           : #fff;
+	border          : 1px solid #BCBCBC;
+	border-radius   : 3px;
+	background-color: #009A61;
+	cursor          : pointer;
+}
+button:hover{
+	opacity: 0.8;
+}
+
+button:focus {
+    opacity   : 0.8;
+    cursor    : pointer;
+    transition: .15s ease-in;
+}
+
+.btn-danger {
+    padding   : 5px 15px;
+    border    : 1px solid salmon;
+    background: salmon;
+}
+.btn-save{
+	border    : 1px solid #0090d3;
+	background: #0090d3;
+}
+
+.btn-close{
+	border    : 1px solid #ccc;
+	background: #ccc;
+}
+
+#app {
+	margin   : 0 auto;
+	max-width: 480px;
+}
+
+
+#searchBar{
+	margin      : 10px;
+	padding-left: 20px;
+}
+
+#searchBar input[type=text]{
+	width: 80%;
+}
+
+.arrow {
+	display       : inline-block;
+	vertical-align: middle;
+	width         : 0;
+	height        : 0;
+	margin-left   : 5px;
+	opacity       : 0.66;
+}
+
+.arrow.asc {
+	border-left  : 4px solid transparent;
+	border-right : 4px solid transparent;
+	border-bottom: 4px solid #fff;
+}
+
+.arrow.dsc {
+	border-left : 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top  : 4px solid #fff;
+}
+
+
+
+.container {
+	padding-left : 15px;
+	padding-right: 15px;
+	margin       : 10px;
+}
+
+.search-input {
+	width: 80%;
+}
+
+.form-group {
+	margin: 10px;
+}
+
+.form-group > label {
+	display      : inline-block;
+	padding-right: 1rem;
+	width        : 5rem;
+	text-align   : right;
+}
+
+.form-group > input,
+.form-group > select {
+	display    : inline-block;
+	height     : 1.8rem;
+	line-height: 1.8rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.dialog {
+	width              : 480px;
+	position           : fixed;
+	left               : 50%;
+	top                : 2em;
+	transform          : translateX(-50%);
+	z-index            : 2000;
+	visibility         : hidden;
+	backface-visibility: hidden;
+	perspective        : 1300px;
+}
+
+.dialog-active {
+	visibility: visible;
+}
+
+.dialog-active .dialog-content {
+	opacity  : 1;
+	transform: rotateY(0);
+}
+
+.dialog-active ~ .dialog-overlay {
+	opacity   : 1;
+	visibility: visible;
+}
+
+.dialog-content {
+	border-radius  : 3px;
+	background     : #fff;
+	overflow       : hidden;
+	box-shadow     : 0 10px 20px rgba(0, 0, 0, 0.1);
+	transition     : .5s ease-in-out;
+	opacity        : 0;
+	transform-style: preserve-3d;
+	transform      : rotateY(-70deg);
+}
+
+.dialog-header {
+	background: #0090d3;
+	color     : #fff;
+}
+
+.dialog-title {
+	margin     : 0;
+	font-size  : 2em;
+	text-align : center;
+	font-weight: 200;
+	line-height: 2em;
+}
+
+.dialog-body {
+	padding: 2em;
+}
+
+.dialog-footer {
+	margin    : 0 2em;
+	padding   : 1em 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dialog-overlay {
+	content   : "";
+	position  : fixed;
+	visibility: hidden;
+	top       : 0;
+	left      : 0;
+	right     : 0;
+	bottom    : 0;
+	z-index   : 1000;
+	opacity   : 0;
+	background: rgba(0, 0, 0, 0.5);
+	transition: all .6s;
+}
+
+.child-component {
+	display: none
+}
+
+.parent-content,.child-content {
+				height : 150px;
+				padding: 20px;
+			}
+			
+.parent-content {
+				border       : 1px solid #0090D3;
+				margin-bottom: 20px;
+}
+			
+.child-content {
+				border: 1px solid #ff0066;
+			}
+
+.content {
+	margin: 30px auto;
+	max-width: 480px;
+	border: 1px solid #ccc;
+}
+
+#myComponent {
+	display: none
+}
