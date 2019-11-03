@@ -40,3 +40,7 @@ footnote : "Go Through Typescript in 24 hours"
 title : "Go Through Typescript in 24 hours"
 description : "Learning Typescript By Coding"
 # thumbnail : assets/img/thumb.png
+
+## layout setting 
+
+layout: top-left
