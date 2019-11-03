@@ -4,4 +4,4 @@ For learning Javascript and Typescript
 
 ## Typescript
 
-- [intro]
+- [intro](https://gitpitch.com/allroundtesters/js-steps/master#/)
