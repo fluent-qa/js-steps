@@ -27,5 +27,31 @@ console.log(e); // it is 3 now
 // very interesting usage
 console.log(Color[2])
 
+for (let item in Color) {
+    console.log(item)
+}
 
+// Any
 
+let notSure: any = 4
+console.log(notSure)
+notSure="this is testing!!"
+console.log(notSure)
+notSure=false
+console.log(notSure)
+
+//think about as object or any existing type for Any
+
+let l_any = [1,true,"false"]
+l_any[1]=100
+
+l_any.forEach(element => {
+    console.log(element)    
+});
+
+//void type, the absense of having any type at all
+function warnUser():void {
+    console.log("this is warning user!!!");
+}
+
+warnUser()

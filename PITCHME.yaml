@@ -44,3 +44,24 @@ description : "Learning Typescript By Coding"
 ## layout setting 
 
 layout: top-left
+transition: fade
+loop: true
+rtl: true
+
+# controls-layout: edges/bottom-right
+
+## Print setting       
+# print-fragments : true
+# print-notes     : false
+# print-footer    : false
+# mousewheel : true
+# remote-control : true
+# plugins
+# charts : true
+
+# codes: 
+# code-line-numbers : true
+# highlight : monokai
+# @diff[class...]($user/$repo/$commit)
+
+

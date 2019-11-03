@@ -2,5 +2,5 @@
 
 npm install -g typescript
 # npm install -g typescript@next
-
-npm install -g @types/node
+sudo apt install node-typescript
+# npm install -g @types/node
