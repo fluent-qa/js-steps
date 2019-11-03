@@ -4,6 +4,7 @@
 - Project Stucture
 ---
 
+@snap[center]
 ### 1. 快速上手- Hello World
 
 ```js
@@ -13,6 +14,7 @@ function greeter(person:string){
 
 console.log(greeter('world!'))
 ```
+@snapened
 ---
 
 ### 2. 编译运行typescript
