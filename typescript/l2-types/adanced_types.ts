@@ -55,3 +55,15 @@ function warnUser():void {
 }
 
 warnUser()
+
+
+//null and undefined ,never
+
+//Object non-primitive type, i.e. anything that is not 
+// number, string, boolean, symbol, null, or undefined.
+
+declare function create(o:Object|null):void;
+
+create({porp:0})
+create(null)
+create("test") //error
