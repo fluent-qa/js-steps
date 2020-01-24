@@ -10,8 +10,8 @@ console.log(f().indexOf(1))
 
 console.log(f("world"))
 
-declare var document;
-doccument.title ="Hello"
+// declare var document;
+// document.title ="Hello"
 
  // declare var $; it is error,jquery is not included 
 

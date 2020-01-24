@@ -3,4 +3,4 @@ function greeter(person: string){
 }
 
 console.log(greeter('world'))
-console.log(greeter([0,1,2]))
+// console.log(greeter([0,1,2]))
