@@ -63,3 +63,5 @@ console.log(r)
 console.log("round area:",r.area())
 r.grow()
 r.fire()
+
+//todo: understand call/apply
