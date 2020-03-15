@@ -63,6 +63,6 @@ projectRoot
 ├── src
 │   ├── file1.js
 │   └── file2.js
-├── built
+├── build
 └── tsconfig.json
 ```
