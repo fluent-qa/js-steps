@@ -11,13 +11,16 @@
     <div id="app">
         {{message}}
         <button v-on:click="reverseMessage">reverse Msg</button>
-        //two way
+        //two way binding
         <input v-model="message">
         <span v-if ="seen" v-bind:title="aMsg">Now you can seen me</span>
         <ol>
-            <li v-for="todo in todos">
+            <todo-item v-for="todo in todos"
+                    v-bind:todo="todo" 
+                    v-bind:key="todo.id"
+            >
                 {{todo.text}}
-            </li>
+            </todo-item>
         </ol>
     </div>
 </body>
