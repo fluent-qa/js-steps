@@ -1,12 +1,8 @@
-# Vue 
+# Vue Intro
 
-- Two Way Binding
-- v-for
-- v-on
-- v-show/v-if/v-else
+- Vue Basic Usage
 
 
-## To Do
+## Vue Intro Reference
 
-- v-for : index 使用
-- 
+- [vue tutorial in scrimba](https://scrimba.com/p/pXKqta/cQ3QVcr)
