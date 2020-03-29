@@ -66,3 +66,11 @@ projectRoot
 ├── build
 └── tsconfig.json
 ```
+
+-----
+
+## ts Commands
+
+```sh
+tsc -w # watch mode
+```
