@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic VUE</title>
+    <link rel="stylesheet" href="index.css" >
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <button v-on:click="reverseMessage">reverse Msg</button>
+        //two way binding
+        <input v-model="message">
+        <span v-if ="seen" v-bind:title="aMsg">Now you can seen me</span>
+        <ol>
+            <todo-item v-for="todo in todos"
+                    v-bind:todo="todo" 
+                    v-bind:key="todo.id"
+            >
+                {{todo.text}}
+            </todo-item>
+        </ol>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
