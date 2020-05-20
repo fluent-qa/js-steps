@@ -1,0 +1,20 @@
+{
+  "name": "blockchain message event system",
+  "version": "1.0.0",
+  "description": "Example Application for typescript quick start",
+  "main": "index.js",
+  "scripts": {
+    "build:client": "tsc -p src/client/tsconfig.client.json",
+    "build:server": "tsc -p src/server/tsconfig.server.json",
+    "build": "concurrently npm:build:*",
+    "start:tsc:client": "tsc -p src/client/tsconfig.client.json --watch",
+    "start:server": "nodemon --inspect src/server/main.ts",
+    "start": "concurrently npm:start:*",
+    "now-start": "NODE_ENV=production node build/server/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^7.3.0"
+  }
+}
