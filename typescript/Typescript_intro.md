@@ -1,5 +1,11 @@
 # Learning Typescript 
 
+- installations
+
+```sh
+cnpm install -g typescript
+```
+
 ## 1. 快速上手- Hello World
 
 - Hello World
