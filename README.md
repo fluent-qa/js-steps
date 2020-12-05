@@ -1,6 +1,7 @@
 # README
 
-For learning Javascript and Typescript
+Learning Javascript and Typescript From Building a Blog based on Github Issue.
+
 
 ## Typescript
 
