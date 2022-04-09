@@ -27,7 +27,7 @@
     "axios": "^0.21.0",
     "lodash-es": "^4.17.15",
     "mockjs": "^1.1.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.0",
     "vue": "^3.0.2",
